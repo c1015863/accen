@@ -1,0 +1,12 @@
+R1: Deny if OR(BFJ, YEJ)
+R2: Permit if AND(BFJ, YEJ)
+P1: DOV(R1, R2)
+R3: Permit if AND(YWV, IZU)
+R4: Deny if EMN
+P2: DOV(R3, R4)
+P: DOV(P1, P2)
+
+BFJYEJEMN
+
+openssl enc -d -aes-256-cbc -in flag.enc -out decrypt1.txt -pbkdf2
+
